@@ -19,3 +19,31 @@ export const login = (credential, asHost) => {
     return response.json();
   });
 };
+
+export const searchStays = (query) => {
+  const authToken = localStorage.getItem("authToken");
+  const searchStaysUrl = new URL(`${domain}/search/`);
+  searchStaysUrl.searchParams.append("guest_number", query.guest_number);
+  searchStaysUrl.searchParams.append(
+    "checkin_date",
+    query.checkin_date.format("YYYY-MM-DD")
+  );
+  searchStaysUrl.searchParams.append(
+    "checkout_date",
+    query.checkout_date.format("YYYY-MM-DD")
+  );
+  searchStaysUrl.searchParams.append("lat", 37);
+  searchStaysUrl.searchParams.append("lon", -122);
+
+  return fetch(searchStaysUrl, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  }).then((response) => {
+    if (response.status !== 200) {
+      throw Error("Fail to search stays");
+    }
+
+    return response.json();
+  });
+};
