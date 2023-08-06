@@ -146,3 +146,20 @@ export const cancelReservation = (reservationId) => {
     }
   });
 };
+
+export const getReservationsByStay = (stayId) => {
+  const authToken = localStorage.getItem("authToken");
+  const getReservationByStayUrl = `${domain}/stays/reservations/${stayId}`;
+
+  return fetch(getReservationByStayUrl, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  }).then((response) => {
+    if (response.status !== 200) {
+      throw Error("Fail to get reservations by stay");
+    }
+
+    return response.json();
+  });
+};
