@@ -112,3 +112,21 @@ export const deleteStay = (stayId) => {
     }
   });
 };
+
+export const bookStay = (data) => {
+  const authToken = localStorage.getItem("authToken");
+  const bookStayUrl = `${domain}/reservations`;
+
+  return fetch(bookStayUrl, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((response) => {
+    if (response.status !== 200) {
+      throw Error("Fail to book reservation");
+    }
+  });
+};
