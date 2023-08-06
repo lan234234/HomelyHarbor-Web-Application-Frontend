@@ -96,3 +96,19 @@ export const searchStays = (query) => {
     return response.json();
   });
 };
+
+export const deleteStay = (stayId) => {
+  const authToken = localStorage.getItem("authToken");
+  const deleteStayUrl = `${domain}/stays/${stayId}`;
+
+  return fetch(deleteStayUrl, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  }).then((response) => {
+    if (response.status !== 200) {
+      throw Error("Fail to delete stay");
+    }
+  });
+};
