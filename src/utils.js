@@ -130,3 +130,19 @@ export const bookStay = (data) => {
     }
   });
 };
+
+export const cancelReservation = (reservationId) => {
+  const authToken = localStorage.getItem("authToken");
+  const cancelReservationUrl = `${domain}/reservations/${reservationId}`;
+
+  return fetch(cancelReservationUrl, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  }).then((response) => {
+    if (response.status !== 200) {
+      throw Error("Fail to cancel reservation");
+    }
+  });
+};
