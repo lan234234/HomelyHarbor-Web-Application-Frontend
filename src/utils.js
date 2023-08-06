@@ -52,6 +52,23 @@ export const getReservations = () => {
   });
 };
 
+export const getStaysByHost = () => {
+  const authToken = localStorage.getItem("authToken");
+  const listStaysUrl = `${domain}/stays/`;
+
+  return fetch(listStaysUrl, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  }).then((response) => {
+    if (response.status !== 200) {
+      throw Error("Fail to get stay list");
+    }
+
+    return response.json();
+  });
+};
+
 export const searchStays = (query) => {
   const authToken = localStorage.getItem("authToken");
   const searchStaysUrl = new URL(`${domain}/search/`);
