@@ -7,7 +7,12 @@ const { Header, Content } = Layout;
 
 class App extends React.Component {
   render() {
-    return <></>;
+    return (
+      <Layout>
+        <Header></Header>
+        <Content></Content>
+      </Layout>
+    );
   }
 }
 
