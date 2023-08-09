@@ -59,9 +59,24 @@ class App extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <Header></Header>
-        <Content>{this.renderContent()}</Content>
+      <Layout style={{ height: "100vh" }}>
+        <Header style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ fontSize: 16, fontWeight: 600, color: "white" }}>
+            Stays Booking
+          </div>
+          {this.state.authed && (
+            <div>
+              <Dropdown trigger="click" overlay={this.userMenu}>
+                <Button icon={<UserOutlined />} shape="circle" />
+              </Dropdown>
+            </div>
+          )}
+        </Header>
+        <Content
+          style={{ height: "calc(100% - 64px)", margin: 20, overflow: "auto" }}
+        >
+          {this.renderContent()}
+        </Content>
       </Layout>
     );
   }
