@@ -49,6 +49,14 @@ class App extends React.Component {
     return <div>guest home page</div>;
   };
 
+  userMenu = (
+    <Menu>
+      <Menu.Item key="logout" onClick={this.handleLogOut}>
+        Log Out
+      </Menu.Item>
+    </Menu>
+  );
+
   render() {
     return (
       <Layout>
