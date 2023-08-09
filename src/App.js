@@ -20,6 +20,15 @@ class App extends React.Component {
     });
   }
 
+  handleLoginSuccess = (token, asHost) => {
+    localStorage.setItem("authToken", token);
+    localStorage.setItem("asHost", asHost);
+    this.setState({
+      authed: true,
+      asHost,
+    });
+  };
+
   renderContent = () => {
     if (!this.state.authed) {
       return <div>login page</div>; //login page is just a place holder
