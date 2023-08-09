@@ -6,11 +6,23 @@ import { Layout } from "antd";
 const { Header, Content } = Layout;
 
 class App extends React.Component {
+  renderContent = () => {
+    if (!this.state.authed) {
+      return <div>login page</div>; //login page is just a place holder
+    }
+
+    if (this.state.asHost) {
+      return <div>host home page</div>;
+    }
+
+    return <div>guest home page</div>;
+  };
+
   render() {
     return (
       <Layout>
         <Header></Header>
-        <Content></Content>
+        <Content>{this.renderContent()}</Content>
       </Layout>
     );
   }
