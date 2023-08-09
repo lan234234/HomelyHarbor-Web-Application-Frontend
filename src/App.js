@@ -6,6 +6,10 @@ import { Layout } from "antd";
 const { Header, Content } = Layout;
 
 class App extends React.Component {
+  state = {
+    authed: false,
+    asHost: false,
+  };
   renderContent = () => {
     if (!this.state.authed) {
       return <div>login page</div>; //login page is just a place holder
