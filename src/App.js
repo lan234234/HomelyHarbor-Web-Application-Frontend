@@ -29,6 +29,14 @@ class App extends React.Component {
     });
   };
 
+  handleLogOut = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("asHost");
+    this.setState({
+      authed: false,
+    });
+  };
+
   renderContent = () => {
     if (!this.state.authed) {
       return <div>login page</div>; //login page is just a place holder
