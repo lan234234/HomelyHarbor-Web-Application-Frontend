@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Layout, Dropdown, Menu, Button } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import React from "react";
-import { Layout } from "antd";
 
 const { Header, Content } = Layout;
 
