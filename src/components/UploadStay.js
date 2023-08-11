@@ -6,9 +6,32 @@ class UploadStay extends React.Component {
     loading: false,
   };
 
+  fileInputRef = React.createRef();
+
+  handleSubmit = async (values) => {
+    const formData = new FormData();
+    const { files } = this.fileInputRef.current;
+
+    // step1
+    this.setState({
+      loading: true,
+    });
+    //step2
+    //step3
+    try {
+      await uploadStay(formData);
+    } catch (error) {
+      message.error(error.message);
+    } finally {
+      this.setState({
+        loading: false,
+      });
+    }
+  };
+
   render() {
     return (
-      <Form>
+      <Form onFinish={this.handleSubmit}>
         <Form.Item label="Name">
           <Input />
         </Form.Item>
@@ -22,7 +45,7 @@ class UploadStay extends React.Component {
           <InputNumber />
         </Form.Item>
         <Form.Item label="Picture">
-          <input type="file" />
+          <input type="file" ref={this.fileInputRef} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" loading={this.state.loading}>
