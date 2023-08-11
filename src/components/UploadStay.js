@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, InputNumber } from "antd";
 import React from "react";
 
 class UploadStay extends React.Component {
@@ -9,11 +9,21 @@ class UploadStay extends React.Component {
   render() {
     return (
       <Form>
-        <Form.Item></Form.Item>
-        <Form.Item></Form.Item>
-        <Form.Item></Form.Item>
-        <Form.Item></Form.Item>
-        <Form.Item></Form.Item>
+        <Form.Item label="Name">
+          <Input />
+        </Form.Item>
+        <Form.Item label="Address">
+          <Input />
+        </Form.Item>
+        <Form.Item label="Description">
+          <Input.TextArea />
+        </Form.Item>
+        <Form.Item label="Guest number">
+          <InputNumber />
+        </Form.Item>
+        <Form.Item label="Picture">
+          <input type="file" />
+        </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" loading={this.state.loading}>
             Submit
