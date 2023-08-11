@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
+import UploadStay from "./UploadStay";
 
 const { TabPane } = Tabs;
 
@@ -11,7 +12,7 @@ class HostHomePage extends React.Component {
           <div>My Stays Content</div>
         </TabPane>
         <TabPane tab="Upload Stay" key="2">
-          <div>Upload Stays</div>
+          <UploadStay />
         </TabPane>
       </Tabs>
     );
