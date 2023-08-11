@@ -96,7 +96,7 @@ class HostHomePage extends React.Component {
     return (
       <Tabs defaultActiveKey="1" destroyInactiveTabPane={true}>
         <TabPane tab="My Stays" key="1">
-          <div>My Stays Content</div>
+          <MyStays />
         </TabPane>
         <TabPane tab="Upload Stay" key="2">
           <UploadStay />
