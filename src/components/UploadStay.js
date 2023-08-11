@@ -1,4 +1,4 @@
-import { Button, InputNumber } from "antd";
+import { Form, Button, Input, InputNumber } from "antd";
 import React from "react";
 
 class UploadStay extends React.Component {
