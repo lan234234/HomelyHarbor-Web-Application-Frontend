@@ -39,7 +39,7 @@ class App extends React.Component {
 
   renderContent = () => {
     if (!this.state.authed) {
-      return <LoginPage />;
+      return <LoginPage handleLoginSuccess={this.handleLoginSuccess} />;
     }
 
     if (this.state.asHost) {
