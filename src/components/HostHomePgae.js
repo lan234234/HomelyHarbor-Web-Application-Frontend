@@ -4,6 +4,12 @@ import UploadStay from "./UploadStay";
 
 const { TabPane } = Tabs;
 
+export class StayDetailInfoButton extends React.Component {
+  render() {
+    return <></>;
+  }
+}
+
 class HostHomePage extends React.Component {
   render() {
     return (
