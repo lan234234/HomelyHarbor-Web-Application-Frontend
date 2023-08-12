@@ -1,6 +1,5 @@
-import { DatePicker, InputNumber, message } from "antd";
+import { Button, DatePicker, Form, InputNumber, Tabs, message } from "antd";
 import React from "react";
-import { Tabs, Form, Button } from "antd";
 import { searchStays } from "../utils";
 
 const { TabPane } = Tabs;
@@ -56,7 +55,11 @@ class SearchStays extends React.Component {
             <DatePicker />
           </Form.Item>
           <Form.Item>
-            <Button loading={this.state.loading} htmlType="submit">
+            <Button
+              loading={this.state.loading}
+              type="primary"
+              htmlType="submit"
+            >
               Submit
             </Button>
           </Form.Item>
@@ -74,7 +77,7 @@ class GuestHomePage extends React.Component {
           <SearchStays />
         </TabPane>
         <TabPane tab="My Reservations" key="2">
-          My Reservations Content
+          <div>My Reservations</div>
         </TabPane>
       </Tabs>
     );
