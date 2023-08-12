@@ -22,6 +22,14 @@ import UploadStay from "./UploadStay";
 
 const { TabPane } = Tabs;
 
+export class ReservationList extends React.Component {
+  state = {};
+
+  render() {
+    return <></>;
+  }
+}
+
 export class RemoveStayButton extends React.Component {
   state = {
     loading: false,
