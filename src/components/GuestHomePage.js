@@ -1,6 +1,20 @@
-import { Button, DatePicker, Form, InputNumber, Tabs, message } from "antd";
+import {
+  Button,
+  Card,
+  Carousel,
+  DatePicker,
+  Form,
+  Image,
+  InputNumber,
+  List,
+  Tabs,
+  message,
+} from "antd";
 import React from "react";
 import { searchStays } from "../utils";
+import Text from "antd/lib/typography/Text";
+import StayDetailInfoButton from "./HostHomePage";
+import { LeftCircleFilled, RightCircleFilled } from "@ant-design/icons";
 
 const { TabPane } = Tabs;
 
@@ -64,6 +78,49 @@ class SearchStays extends React.Component {
             </Button>
           </Form.Item>
         </Form>
+        <List
+          loading={this.state.loading}
+          grid={{
+            gutter: 16,
+            xs: 1,
+            sm: 3,
+            md: 3,
+            lg: 3,
+            xl: 4,
+            xxl: 4,
+          }}
+          dataSource={this.state.data}
+          renderItem={(item) => (
+            <List.Item>
+              <Card
+                key={item.id}
+                title={
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <Text ellipsis={true} style={{ maxWidth: 150 }}>
+                      {item.name}
+                    </Text>
+                    <StayDetailInfoButton stay={item} />
+                  </div>
+                }
+                actions={[]}
+                extra={null}
+              >
+                <Carousel
+                  dots={false}
+                  arrows={true}
+                  prevArrow={<LeftCircleFilled />}
+                  nextArrow={<RightCircleFilled />}
+                >
+                  {item.images.map((image, index) => (
+                    <div key={index}>
+                      <Image src={image.url} width="100%" />
+                    </div>
+                  ))}
+                </Carousel>
+              </Card>
+            </List.Item>
+          )}
+        />
       </>
     );
   }
