@@ -1,6 +1,6 @@
-import { message } from "antd";
+import { DatePicker, InputNumber, message } from "antd";
 import React from "react";
-import { Tabs } from "antd";
+import { Tabs, Form, Button } from "antd";
 import { searchStays } from "../utils";
 
 const { TabPane } = Tabs;
@@ -33,11 +33,21 @@ class SearchStays extends React.Component {
   render() {
     return (
       <>
-        <Form onFinish={this.search}>
-          <Form.Item></Form.Item>
-          <Form.Item></Form.Item>
-          <Form.Item></Form.Item>
-          <Form.Item></Form.Item>
+        <Form onFinish={this.search} layout="inline">
+          <Form.Item>
+            <InputNumber min={1} />
+          </Form.Item>
+          <Form.Item>
+            <DatePicker />
+          </Form.Item>
+          <Form.Item>
+            <DatePicker />
+          </Form.Item>
+          <Form.Item>
+            <Button loading={this.state.loading} htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
         </Form>
       </>
     );
@@ -49,7 +59,7 @@ class GuestHomePage extends React.Component {
     return (
       <Tabs defaultActiveKey="1" destroyInactiveTabPane={true}>
         <TabPane tab="Search Stays" key="1">
-          Search Stays Content
+          <SearchStays />
         </TabPane>
         <TabPane tab="My Reservations" key="2">
           My Reservations Content
