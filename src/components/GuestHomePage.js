@@ -31,7 +31,16 @@ class SearchStays extends React.Component {
   };
 
   render() {
-    return <></>;
+    return (
+      <>
+        <Form onFinish={this.search}>
+          <Form.Item></Form.Item>
+          <Form.Item></Form.Item>
+          <Form.Item></Form.Item>
+          <Form.Item></Form.Item>
+        </Form>
+      </>
+    );
   }
 }
 
