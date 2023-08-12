@@ -26,7 +26,27 @@ class MyReservations extends React.Component {
   };
 
   render() {
-    return <></>;
+    return (
+      <List
+        style={{ width: 1000, margin: "auto" }}
+        loading={this.state.loading}
+        dataSource={this.state.data}
+        renderItem={(item) => (
+          <List.Item actions={[]}>
+            <List.Item.Meta
+              title={<Text>{item.stay.name}</Text>}
+              description={
+                <>
+                  <Text>Checkin Date: {item.checkin_date}</Text>
+                  <br />
+                  <Text>Checkout Date: {item.checkout_date}</Text>
+                </>
+              }
+            />
+          </List.Item>
+        )}
+      />
+    );
   }
 }
 
