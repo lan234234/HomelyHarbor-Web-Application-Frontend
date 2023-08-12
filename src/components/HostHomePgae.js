@@ -1,5 +1,20 @@
-import { message, Tabs, List, Card, Image, Carousel } from "antd";
-import { LeftCircleFilled, RightCircleFilled } from "@ant-design/icons";
+import {
+  message,
+  Tabs,
+  List,
+  Card,
+  Image,
+  Carousel,
+  Tooltip,
+  Button,
+  Space,
+  Modal,
+} from "antd";
+import {
+  LeftCircleFilled,
+  RightCircleFilled,
+  InfoCircleFilled,
+} from "@ant-design/icons";
 import Text from "antd/lib/typography/Text";
 import React from "react";
 import { getStaysByHost } from "../utils";
@@ -12,8 +27,29 @@ export class StayDetailInfoButton extends React.Component {
     modalVisible: false,
   };
 
+  openModal = () => {
+    this.setState({
+      modalVisible: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalVisible: false,
+    });
+  };
+
   render() {
-    return <></>;
+    return (
+      <>
+        <Tooltip title="View Stay Details">
+          <Button onClick={this.openModal} icon={<InfoCircleOutlined />} />
+        </Tooltip>
+        <Modal visible={this.state.modalVisible} onCancel={this.closeModal}>
+          Modal content
+        </Modal>
+      </>
+    );
   }
 }
 
