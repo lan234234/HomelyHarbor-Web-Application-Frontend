@@ -3,6 +3,17 @@ import { Tabs } from "antd";
 
 const { TabPane } = Tabs;
 
+class SearchStays extends React.Component {
+  state = {
+    loading: false,
+    data: [],
+  };
+
+  render() {
+    return <></>;
+  }
+}
+
 class GuestHomePage extends React.Component {
   render() {
     return (
