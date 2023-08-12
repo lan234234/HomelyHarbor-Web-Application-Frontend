@@ -12,12 +12,23 @@ import {
   message,
 } from "antd";
 import React from "react";
-import { bookStay, searchStays } from "../utils";
+import { bookStay, searchStays, getReservations } from "../utils";
 import Text from "antd/lib/typography/Text";
 import { StayDetailInfoButton } from "./HostHomePage";
 import { LeftCircleFilled, RightCircleFilled } from "@ant-design/icons";
 
 const { TabPane } = Tabs;
+
+class MyReservations extends React.Component {
+  state = {
+    loading: false,
+    data: [],
+  };
+
+  render() {
+    return <></>;
+  }
+}
 
 class BookStayButton extends React.Component {
   state = {
@@ -227,7 +238,7 @@ class GuestHomePage extends React.Component {
           <SearchStays />
         </TabPane>
         <TabPane tab="My Reservations" key="2">
-          <div>My Reservations</div>
+          <MyReservations />
         </TabPane>
       </Tabs>
     );
