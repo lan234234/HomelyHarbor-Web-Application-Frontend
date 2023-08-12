@@ -172,7 +172,9 @@ class MyStays extends React.Component {
                 </div>
               }
               actions={[]}
-              extra={null}
+              extra={
+                <RemoveStayButton stay={item} onRemoveSuccess={this.loadData} />
+              }
             >
               <Carousel
                 dots={false}
