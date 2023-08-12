@@ -7,16 +7,23 @@ import {
   Image,
   InputNumber,
   List,
+  Modal,
   Tabs,
   message,
 } from "antd";
 import React from "react";
-import { searchStays } from "../utils";
+import { bookStay, searchStays } from "../utils";
 import Text from "antd/lib/typography/Text";
-import StayDetailInfoButton from "./HostHomePage";
+import { StayDetailInfoButton } from "./HostHomePage";
 import { LeftCircleFilled, RightCircleFilled } from "@ant-design/icons";
 
 const { TabPane } = Tabs;
+
+class BookStayButton extends React.Component {
+  render() {
+    return <></>;
+  }
+}
 
 class SearchStays extends React.Component {
   state = {
@@ -103,7 +110,7 @@ class SearchStays extends React.Component {
                   </div>
                 }
                 actions={[]}
-                extra={null}
+                extra={<BookStayButton stay={item} />}
               >
                 <Carousel
                   dots={false}
