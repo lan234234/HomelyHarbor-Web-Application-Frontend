@@ -25,6 +25,42 @@ class BookStayButton extends React.Component {
     modalVisible: false,
   };
 
+  handleCancel = () => {
+    this.setState({
+      modalVisible: false,
+    });
+  };
+
+  handleBookStay = () => {
+    this.setState({
+      modalVisible: true,
+    });
+  };
+
+  handleSubmit = async (values) => {
+    const { stay } = this.props;
+    this.setState({
+      loading: true,
+    });
+
+    try {
+      await bookStay({
+        checkin_date: values.checkin_date.format("YYYY-MM-DD"),
+        checkout_date: values.checkout_date.format("YYYY-MM-DD"),
+        stay: {
+          id: stay.id,
+        },
+      });
+      message.success("Successfully book stay");
+    } catch (error) {
+      message.error(error.message);
+    } finally {
+      this.setState({
+        loading: false,
+      });
+    }
+  };
+
   render() {
     const { stay } = this.props;
     return (
