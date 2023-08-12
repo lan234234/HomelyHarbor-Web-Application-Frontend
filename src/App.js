@@ -2,7 +2,7 @@ import { Layout, Dropdown, Menu, Button } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import React from "react";
 import LoginPage from "./components/LoginPage";
-import HostHomePage from "./components/HostHomePgae";
+import HostHomePage from "./components/HostHomePage";
 import GuestHomePage from "./components/GuestHomePage";
 
 const { Header, Content } = Layout;
