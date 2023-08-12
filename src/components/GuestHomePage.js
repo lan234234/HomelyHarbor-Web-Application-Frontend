@@ -34,13 +34,25 @@ class SearchStays extends React.Component {
     return (
       <>
         <Form onFinish={this.search} layout="inline">
-          <Form.Item>
+          <Form.Item
+            label="Guest Number"
+            name="guest_number"
+            rules={[{ required: true }]}
+          >
             <InputNumber min={1} />
           </Form.Item>
-          <Form.Item>
+          <Form.Item
+            label="Checkin Date"
+            name="checkin_date"
+            rules={[{ required: true }]}
+          >
             <DatePicker />
           </Form.Item>
-          <Form.Item>
+          <Form.Item
+            label="Checkout Date"
+            name="checkout_date"
+            rules={[{ required: true }]}
+          >
             <DatePicker />
           </Form.Item>
           <Form.Item>
