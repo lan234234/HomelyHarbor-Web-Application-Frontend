@@ -30,7 +30,17 @@ class CancelReservationButton extends React.Component {
   };
 
   render() {
-    return <></>;
+    return (
+      <Button
+        loading={this.state.loading}
+        onClick={this.handleCancelReservation}
+        danger={true}
+        shape="round"
+        type="primary"
+      >
+        Cancel Reservation
+      </Button>
+    );
   }
 }
 
