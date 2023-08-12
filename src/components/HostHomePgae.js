@@ -23,6 +23,10 @@ import UploadStay from "./UploadStay";
 const { TabPane } = Tabs;
 
 export class RemoveStayButton extends React.Component {
+  state = {
+    loading: false,
+  };
+
   render() {
     return <></>;
   }
