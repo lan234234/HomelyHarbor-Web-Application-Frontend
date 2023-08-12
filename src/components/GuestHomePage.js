@@ -9,6 +9,25 @@ class SearchStays extends React.Component {
     data: [],
   };
 
+  search = async (query) => {
+    this.setState({
+      loading: true,
+    });
+
+    try {
+      const resp = await searchStays(query);
+      this.setState({
+        data: resp,
+      });
+    } catch (error) {
+      message.error(error.message);
+    } finally {
+      this.setState({
+        loading: false,
+      });
+    }
+  };
+
   render() {
     return <></>;
   }
