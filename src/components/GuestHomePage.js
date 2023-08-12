@@ -12,12 +12,27 @@ import {
   message,
 } from "antd";
 import React from "react";
-import { bookStay, searchStays, getReservations } from "../utils";
+import {
+  bookStay,
+  searchStays,
+  getReservations,
+  cancelReservation,
+} from "../utils";
 import Text from "antd/lib/typography/Text";
 import { StayDetailInfoButton } from "./HostHomePage";
 import { LeftCircleFilled, RightCircleFilled } from "@ant-design/icons";
 
 const { TabPane } = Tabs;
+
+class CancelReservationButton extends React.Component {
+  state = {
+    loading: false,
+  };
+
+  render() {
+    return <></>;
+  }
+}
 
 class MyReservations extends React.Component {
   state = {
@@ -55,7 +70,14 @@ class MyReservations extends React.Component {
         loading={this.state.loading}
         dataSource={this.state.data}
         renderItem={(item) => (
-          <List.Item actions={[]}>
+          <List.Item
+            actions={[
+              <CancelReservationButton
+                onCancelSuccess={this.loadData}
+                reservationId={item.id}
+              />,
+            ]}
+          >
             <List.Item.Meta
               title={<Text>{item.stay.name}</Text>}
               description={
