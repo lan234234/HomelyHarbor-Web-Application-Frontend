@@ -47,7 +47,17 @@ export class RemoveStayButton extends React.Component {
   };
 
   render() {
-    return <></>;
+    return (
+      <Button
+        loading={this.state.loading}
+        onClick={this.handleRemoveStay}
+        danger={true}
+        shape="round"
+        type="primary"
+      >
+        Remove Stay
+      </Button>
+    );
   }
 }
 
