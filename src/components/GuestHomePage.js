@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
+import { searchStays } from "../utils";
 
 const { TabPane } = Tabs;
 
