@@ -17,7 +17,7 @@ import {
 } from "@ant-design/icons";
 import Text from "antd/lib/typography/Text";
 import React from "react";
-import { getStaysByHost } from "../utils";
+import { deleteStay, getStaysByHost } from "../utils";
 import UploadStay from "./UploadStay";
 
 const { TabPane } = Tabs;
