@@ -272,7 +272,7 @@ class MyStays extends React.Component {
                   <StayDetailInfoButton stay={item} />
                 </div>
               }
-              actions={[]}
+              actions={[<ViewReservationsButton stay={item} />]}
               extra={
                 <RemoveStayButton stay={item} onRemoveSuccess={this.loadData} />
               }
