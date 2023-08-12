@@ -5,15 +5,15 @@ import {
   Card,
   Image,
   Carousel,
-  Tooltip,
   Button,
+  Tooltip,
   Space,
   Modal,
 } from "antd";
 import {
   LeftCircleFilled,
   RightCircleFilled,
-  InfoCircleFilled,
+  InfoCircleOutlined,
 } from "@ant-design/icons";
 import Text from "antd/lib/typography/Text";
 import React from "react";
@@ -33,21 +33,45 @@ export class StayDetailInfoButton extends React.Component {
     });
   };
 
-  closeModal = () => {
+  handleCancel = () => {
     this.setState({
       modalVisible: false,
     });
   };
 
   render() {
+    const { stay } = this.props;
+    const { name, description, address, guest_number } = stay;
+    const { modalVisible } = this.state;
     return (
       <>
         <Tooltip title="View Stay Details">
-          <Button onClick={this.openModal} icon={<InfoCircleOutlined />} />
+          <Button
+            onClick={this.openModal}
+            style={{ border: "none" }}
+            size="large"
+            icon={<InfoCircleOutlined />}
+          />
         </Tooltip>
-        <Modal visible={this.state.modalVisible} onCancel={this.closeModal}>
-          Modal content
-        </Modal>
+        {modalVisible && (
+          <Modal
+            title={name}
+            centered={true}
+            visible={modalVisible}
+            closable={false}
+            footer={null}
+            onCancel={this.handleCancel}
+          >
+            <Space direction="vertical">
+              <Text strong={true}>Description</Text>
+              <Text type="secondary">{description}</Text>
+              <Text strong={true}>Address</Text>
+              <Text type="secondary">{address}</Text>
+              <Text strong={true}>Guest Number</Text>
+              <Text type="secondary">{guest_number}</Text>
+            </Space>
+          </Modal>
+        )}
       </>
     );
   }
