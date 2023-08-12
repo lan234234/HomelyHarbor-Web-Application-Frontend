@@ -8,6 +8,10 @@ import UploadStay from "./UploadStay";
 const { TabPane } = Tabs;
 
 export class StayDetailInfoButton extends React.Component {
+  state = {
+    modalVisible: false,
+  };
+
   render() {
     return <></>;
   }
