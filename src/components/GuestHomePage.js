@@ -25,6 +25,29 @@ class MyReservations extends React.Component {
     data: [],
   };
 
+  componentDidMount() {
+    this.loadData();
+  }
+
+  loadData = async () => {
+    this.setState({
+      loading: true,
+    });
+
+    try {
+      const resp = await getReservations();
+      this.setState({
+        data: resp,
+      });
+    } catch (error) {
+      message.error(error.message);
+    } finally {
+      this.setState({
+        loading: false,
+      });
+    }
+  };
+
   render() {
     return (
       <List
