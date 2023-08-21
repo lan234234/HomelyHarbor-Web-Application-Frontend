@@ -1,4 +1,4 @@
-const domain = "https://staybooking-394717.wm.r.appspot.com";
+const domain = "the url you deployed your backend to";
 
 export const login = (credential, asHost) => {
   const loginUrl = `${domain}/authenticate/${asHost ? "host" : "guest"}`;
