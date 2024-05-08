@@ -10,6 +10,7 @@ import {
   Modal,
   Tabs,
   message,
+  Input,
 } from "antd";
 import React from "react";
 import {
@@ -21,6 +22,7 @@ import {
 import Text from "antd/lib/typography/Text";
 import { StayDetailInfoButton } from "./HostHomePage";
 import { LeftCircleFilled, RightCircleFilled } from "@ant-design/icons";
+import GoogleMapPicker from "./GoogleMapPicker";
 
 const { TabPane } = Tabs;
 
@@ -220,15 +222,22 @@ class SearchStays extends React.Component {
   state = {
     loading: false,
     data: [],
+    coordinates: null,
   };
 
   search = async (query) => {
+    const { coordinates } = this.state;
     this.setState({
       loading: true,
     });
 
     try {
-      const resp = await searchStays(query);
+      const queryWithCoords = {
+        ...query,
+        lat: coordinates ? coordinates.lat : 37.445268, // Default latitude
+        lon: coordinates ? coordinates.lng : -122.207913, // Default longitude
+      };
+      const resp = await searchStays(queryWithCoords);
       this.setState({
         data: resp,
       });
@@ -241,31 +250,53 @@ class SearchStays extends React.Component {
     }
   };
 
+  setCoordinates = (coords) => {
+    this.setState({ coordinates: coords });
+  };
+
   render() {
+    const { loading, data, coordinates } = this.state;
     return (
       <>
-        <Form onFinish={this.search} layout="inline">
-          <Form.Item
-            label="Guest Number"
-            name="guest_number"
-            rules={[{ required: true }]}
-          >
-            <InputNumber min={1} />
+        <Form onFinish={this.search} layout="vertical">
+          <div style={{ display: "flex", gap: "16px" }}>
+            <Form.Item
+              label="Guest Number"
+              name="guest_number"
+              rules={[{ required: true }]}
+              style={{ flex: 0.5 }}
+            >
+              <InputNumber min={1} />
+            </Form.Item>
+            <Form.Item
+              label="Checkin Date"
+              name="checkin_date"
+              rules={[{ required: true }]}
+              style={{ flex: 0.5 }}
+            >
+              <DatePicker />
+            </Form.Item>
+            <Form.Item
+              label="Checkout Date"
+              name="checkout_date"
+              rules={[{ required: true }]}
+              style={{ flex: 1 }}
+            >
+              <DatePicker />
+            </Form.Item>
+          </div>
+          <Form.Item label="Location Picker">
+            <GoogleMapPicker setCoordinates={this.setCoordinates} />
           </Form.Item>
-          <Form.Item
-            label="Checkin Date"
-            name="checkin_date"
-            rules={[{ required: true }]}
-          >
-            <DatePicker />
-          </Form.Item>
-          <Form.Item
-            label="Checkout Date"
-            name="checkout_date"
-            rules={[{ required: true }]}
-          >
-            <DatePicker />
-          </Form.Item>
+          {coordinates && (
+            <Form.Item label="Selected Coordinates">
+              <Input
+                value={`Lat: ${coordinates.lat}, Lng: ${coordinates.lng}`}
+                readOnly
+                style={{ width: "500px" }}
+              />
+            </Form.Item>
+          )}
           <Form.Item>
             <Button
               loading={this.state.loading}
