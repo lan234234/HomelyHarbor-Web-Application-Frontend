@@ -1,4 +1,4 @@
-const domain = "https://staybooking-394717.wm.r.appspot.com";
+const domain = "your_deployed_backend_url";
 
 export const login = (credential, asHost) => {
   const loginUrl = `${domain}/authenticate/${asHost ? "host" : "guest"}`;
@@ -78,8 +78,8 @@ export const searchStays = (query) => {
     "checkout_date",
     query.checkout_date.format("YYYY-MM-DD")
   );
-  searchStaysUrl.searchParams.append("lat", 37);
-  searchStaysUrl.searchParams.append("lon", -122);
+  searchStaysUrl.searchParams.append("lat", query.lat);
+  searchStaysUrl.searchParams.append("lon", query.lon);
 
   return fetch(searchStaysUrl, {
     headers: {
