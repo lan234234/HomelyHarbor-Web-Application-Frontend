@@ -1,4 +1,4 @@
-const domain = "your_deployed_backend_url";
+const domain = "the url you deployed your backend to";
 
 export const login = (credential, asHost) => {
   const loginUrl = `${domain}/authenticate/${asHost ? "host" : "guest"}`;
