@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# HomelyHarbor
+## _An online web platform for user with different roles (host or guest) to either uploading stay or reservating stays_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the backend repository of the HomelyHarbor. The frontend code can be found [here](https://github.com/lan234234/HomelyHarbor-Web-Application-Backend/tree/master).
 
-## Available Scripts
+Visit us at: [HomelyHarbor](https://dev1390.d1bx1z9zgvsmt.amplifyapp.com/)
 
-In the project directory, you can run:
+## Features
+- **Authentication:** Secure user profiles with registration, login, and logout functionalities.
+- **Upload Hotel:** Hosts can upload new hotel listings complete with images and descriptions.
+- **Manage Hotel:** Hosts can view their listed hotels and delete any existing entries.
+- **Search Hotel:** Guests can search for available hotels with constraints on dates, location, and number of guests.
+- **Manage Reservation:** Guests can view their reservation history and manage (add or delete) reservations.
 
-### `npm start`
+## Demo
+Explore screenshots from HomelyHarbor showcasing each of our core features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Authentication
+#### Register and Login with Different Role
+![Authentication Process](.github/images/1_login.png)
+#### Logout
+![Authentication Process](.github/images/1_logout.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Upload Hotel
+![Upload Hotel](.github/images/4_uploadStay.png)
+*Interface for hosts to upload new hotels with details and pictures.*
 
-### `npm test`
+### Manage Hotel
+![Manage Hotel](.github/images/5_viewStay_3.png)
+*Interface for hosts to view and delete hotels.*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Search Hotel
+![Search Hotel](.github/images/2_searchStay.png)
+*Interface for clients to search for available hotels.*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Search Results
+![Search Result](.github/images/2_searchResult.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### View Details
+![Stay Info](.github/images/2_searchResult_2.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Manage Reservation
+#### Reserve Hotel
+![Reserve Hotel](.github/images/3_reserveStay.png)
+#### View and Delete Reserved Hotel
+![Manage Reservation](.github/images/3_manageReservation.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend
+- **Spring Boot:** Framework for building scalable, production-ready Java applications with ease, providing a suite of features like dependency injection, data access, and web APIs.
+- **Java:** Primary programming language for backend development, chosen for its robustness, portability, and ecosystem.
+- **MySQL:** Relational database management system for efficiently storing and managing user and application data.
+  
+### Frontend
+- **HTML, CSS, JavaScript:** Core technologies for building and styling web frontends, providing structure, design, and interactivity.
+- **React:** Popular JavaScript library for building fast, dynamic, and component-based user interfaces.
+- **Node.js:** JavaScript runtime environment for developing scalable and high-performance network applications.
+- **Ant Design:** Comprehensive design framework for creating beautiful and responsive UI components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Cloud Infrastructure
+- **AWS RDS (Amazon Relational Database Service):** Managed relational database service used for MySQL deployment, providing scalability and reliability.
+- **Google Cloud Storage:** Object storage solution for securely and efficiently storing application assets and backups.
+- **Google Compute Engine:** Infrastructure-as-a-Service (IaaS) providing scalable virtual machines for running our applications.
+- **Google App Engine:** Platform-as-a-Service (PaaS) offering for deploying and scaling web applications with ease.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### APIs & Geospatial Services
+- **Google Geocoding API:** Service that provides geospatial data, enabling address-to-coordinates and coordinates-to-address conversions.
+- **Google Maps JavaScript API:** API for embedding fully interactive maps into web applications, providing features like markers, layers, and geolocation.
+- **GeoIndex:** Tool for indexing and querying geospatial data, enhancing our application's ability to handle location-based searches.
 
-## Learn More
+### Search & Security
+- **Elasticsearch:** Distributed search engine enabling fast and efficient data retrieval, offering full-text search and analytics capabilities.
+- **Token-based Authentication:** Secure method for managing user sessions and protecting user data via stateless authentication tokens.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+MIT License
