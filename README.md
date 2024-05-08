@@ -1,7 +1,7 @@
 # HomelyHarbor
 ## _An online web platform for user with different roles (host or guest) to either uploading stay or reservating stays_
 
-Welcome to the backend repository of the HomelyHarbor. The frontend code can be found [here](https://github.com/lan234234/HomelyHarbor-Web-Application-Backend/tree/master).
+Welcome to the frontend repository of the HomelyHarbor. The backend code can be found [here](https://github.com/lan234234/HomelyHarbor-Web-Application-Backend/tree/master).
 
 Visit us at: [HomelyHarbor](https://dev1390.d1bx1z9zgvsmt.amplifyapp.com/)
 
@@ -26,9 +26,11 @@ Explore screenshots from HomelyHarbor showcasing each of our core features:
 *Interface for hosts to upload new hotels with details and pictures.*
 
 ### Manage Hotel
+#### View and Delete Hosting Hotels
 ![Manage Hotel](.github/images/5_viewStay_3.png)
-*Interface for hosts to view and delete hotels.*
 
+#### View Hotel Reservations
+![View Hotel Reservation](.github/images/5_viewStayReservation.png)
 
 ### Search Hotel
 ![Search Hotel](.github/images/2_searchStay.png)
