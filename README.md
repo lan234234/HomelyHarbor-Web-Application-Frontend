@@ -3,7 +3,7 @@
 
 Welcome to the frontend repository of the HomelyHarbor. The backend code can be found [here](https://github.com/lan234234/HomelyHarbor-Web-Application-Backend/tree/master).
 
-Visit us at: [HomelyHarbor](https://dev1390.d1bx1z9zgvsmt.amplifyapp.com/)
+Visit us at: [HomelyHarbor](https://staging.d12b4crili04f4.amplifyapp.com)
 
 ## Features
 - **Authentication:** Secure user profiles with registration, login, and logout functionalities.
@@ -29,8 +29,11 @@ Explore screenshots from HomelyHarbor showcasing each of our core features:
 #### View and Delete Hosting Hotels
 ![Manage Hotel](.github/images/5_viewStay_3.png)
 
+![Manage Hotel](.github/images/5_viewStay.png)
+
 #### View Hotel Reservations
 ![View Hotel Reservation](.github/images/5_viewStayReservation.png)
+
 
 ### Search Hotel
 ![Search Hotel](.github/images/2_searchStay.png)
@@ -41,6 +44,9 @@ Explore screenshots from HomelyHarbor showcasing each of our core features:
 
 #### View Details
 ![Stay Info](.github/images/2_searchResult_2.png)
+
+![Stay Info](.github/images/2_searchResult_1.png)
+
 
 ### Manage Reservation
 #### Reserve Hotel
@@ -64,6 +70,7 @@ Explore screenshots from HomelyHarbor showcasing each of our core features:
 
 ### Cloud Infrastructure
 - **AWS RDS (Amazon Relational Database Service):** Managed relational database service used for MySQL deployment, providing scalability and reliability.
+- **AWS Amplify: Managed static hosting and full-stack deployment service for web applications, offering scalability, custom domains.
 - **Google Cloud Storage:** Object storage solution for securely and efficiently storing application assets and backups.
 - **Google Compute Engine:** Infrastructure-as-a-Service (IaaS) providing scalable virtual machines for running our applications.
 - **Google App Engine:** Platform-as-a-Service (PaaS) offering for deploying and scaling web applications with ease.
