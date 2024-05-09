@@ -61,10 +61,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <Layout style={{ height: "100vh" }}>
-        <Header style={{ display: "flex", justifyContent: "space-between" }}>
+      <Layout
+        style={{
+          height: "100vh",
+          backgroundImage: "url('/background.jpg')", // Image from the public directory
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <Header
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+          }}
+        >
           <div style={{ fontSize: 16, fontWeight: 600, color: "white" }}>
-            Stays Booking
+            HomelyHarbor
           </div>
           {this.state.authed && (
             <div>
