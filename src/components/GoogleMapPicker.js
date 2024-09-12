@@ -36,7 +36,7 @@ export default function GoogleMapPicker({ setCoordinates }) {
   return (
     <div style={{ height: "300px", width: "70%", position: "relative" }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyBwJ6pgbPkaf4cwRunUlHxqKkSjN3jFvMI" }} // Replace with your API key
+        bootstrapURLKeys={{ key: "Your API KEY" }} // Replace with your API key
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         onClick={handleClick}
