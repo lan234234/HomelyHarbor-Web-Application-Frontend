@@ -5,9 +5,8 @@ const Marker = ({ text }) => (
   <div
     style={{
       color: "white",
-      background: "red",
-      padding: "5px 10px",
-      borderRadius: "50%",
+      padding: "0px 0px",
+      borderRadius: "0",
       transform: "translate(-50%, -50%)",
       position: "absolute",
     }}
@@ -37,7 +36,7 @@ export default function GoogleMapPicker({ setCoordinates }) {
   return (
     <div style={{ height: "300px", width: "70%", position: "relative" }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "Your_API_Key" }} // Replace with your API key
+        bootstrapURLKeys={{ key: "AIzaSyBwJ6pgbPkaf4cwRunUlHxqKkSjN3jFvMI" }} // Replace with your API key
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         onClick={handleClick}
